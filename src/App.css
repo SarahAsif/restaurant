@@ -32,30 +32,37 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-.drawer{
+
+.drawer {
   width: 30px;
   margin-right: 10px;
 }
-.bg{
-  background-image: url( "./image/bg.png");
+
+.bg {
+  background-image: url("./image/bg.png");
 }
-.img{
+
+.img {
   display: flex;
-      align-self: flex-end;
-    
+  align-self: flex-end;
+
 }
-.icons{
+
+.icons {
   color: red;
- 
-} 
-.links:hover{
- background: #efefef;
- border-radius: 8px;
+
 }
+
+.links:hover {
+  background: #efefef;
+  border-radius: 8px;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -71,7 +78,10 @@
   background: pink;
   border-radius: 10px;
 }
-.textfield{
+
+.textfield {
   width: 30%;
   word-wrap: inherit;
 }
+
+.Table {}

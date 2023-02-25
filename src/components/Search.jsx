@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import List from "./List";
 import "../App.css";
+import InputAdornment from "@mui/material/InputAdornment";
+import AccountCircle from "@mui/icons-material/AccountCircle";
 
 const Search = () => {
   const [inputText, setInputText] = useState("");
@@ -12,14 +13,19 @@ const Search = () => {
   };
 
   return (
-    <div className="p-1">
-      <div className="search">
+    <div className="">
+      <div className="">
         <TextField
-          id="outlined-basic"
-          onChange={inputHandler}
-          variant="outlined"
+          id="input-with-icon-textfield"
           label="Search"
-          className="textfield"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <AccountCircle />
+              </InputAdornment>
+            ),
+          }}
+          variant="standard"
         />
       </div>
     </div>

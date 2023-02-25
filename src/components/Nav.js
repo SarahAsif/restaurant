@@ -9,15 +9,25 @@ import cart from "../image/cart.png";
 import searching from "../image/search.png";
 import { useState } from "react";
 import Search from "./Search";
+import BasicModal from "./BasicModal";
+import { useSelector } from "react-redux";
 
 function Nav() {
+  const { cart } = useSelector((state) => state);
+
   const mobileWidth = IsMobileWidth();
   const tabletWidth = IsTabletWidth();
   const smalldesktopWidth = IsDesktopSmallWidth();
   const [isShown, setIsShown] = useState(false);
+  const [modalShown, setModalShown] = useState(false);
+
   const search = (e) => {
     setIsShown(true);
   };
+  const modals = (e) => {
+    setModalShown(true);
+  };
+  const handleClose = () => setModalShown(false);
 
   return (
     <>
@@ -78,10 +88,30 @@ function Nav() {
             </Link>
           </div>
           <div className="flex flex-row gap-5 ">
-            <img src={searching} className="cursor-pointer" onClick={search} />
-            {isShown && <Search />}
-            <img src={cart} className="cursor-pointer" />
-            <img src={user} className="cursor-pointer" />
+            {isShown === true ? (
+              <Search />
+            ) : (
+              <img
+                src={searching}
+                className="cursor-pointer"
+                onClick={search}
+              />
+            )}
+            <img src={cart} className="cursor-pointer" onClick={modals} />
+            {modalShown && (
+              <BasicModal modalShown={modalShown} handleClose={handleClose} />
+            )}
+            {cart.length > 0 && (
+              <div className="absolute bg-purple-600 text-xs w-5 h-5 flex justify-center items-center animate-bounce -top-1 -right-2 rounded-full top- text-white">
+                {cart.length}
+              </div>
+            )}
+            <img src={user} className="cursor-pointer" onClick={modals} />
+            {modalShown && (
+              <BasicModal modalShown={modalShown} handleClose={handleClose}>
+                <h1>mirhaaaa</h1>
+              </BasicModal>
+            )}
           </div>
         </nav>
       )}

@@ -48,7 +48,7 @@ const Testimonial = () => {
                 <img src={id.img} />
               </div>
 
-              <div classname="text-left items-center  flex flex-row">
+              <div className="text-left items-center  flex flex-row">
                 <div className="flex flex-col space-y-2 justify-around items-left text-left max-w-md">
                   <div className="font-semibold">{id.name}</div>
                   <div>{id.country}</div>

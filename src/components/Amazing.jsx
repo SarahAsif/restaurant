@@ -1,7 +1,6 @@
 import React from "react";
 import "../App.css";
 import Card from "../UI/Card";
-import Logo from "../components/Logo";
 import meal1 from "../image/meal1.png";
 import meal2 from "../image/meal2.png";
 import meal3 from "../image/meal3.png";
@@ -14,10 +13,8 @@ import { IsMobileWidth } from "../utils";
 import { IsTabletWidth } from "../utils";
 import { IsDesktopSmallWidth } from "../utils";
 import { IsDesktopWidth } from "../utils";
-import Divider from "@mui/material/Divider";
-import Curve from "../image/curve.png";
 
-function Amazing() {
+function Amazing({ id, name, price }) {
   const mobileWidth = IsMobileWidth();
   const tabletWidth = IsTabletWidth();
   const desktopSmallWidth = IsDesktopSmallWidth();
@@ -108,6 +105,9 @@ function Amazing() {
                   <img src={share} className="w-5" />
                 </div>
               </div>
+              <button className="bg-red-300 w-36 p-3 text-lg font-bold">
+                Add to Cart
+              </button>
             </div>
           ))}
         </div>{" "}
